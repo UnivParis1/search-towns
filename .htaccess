@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^(postalCodeLookup)$ $1.php [L]
