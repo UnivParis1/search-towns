@@ -20,3 +20,9 @@ function echoJson($o) {
   else
     echo json_encode($o);  
 }
+
+function fatal($msg) {
+   header("HTTP/1.0 400 $msg");
+   echoJson(array("error" => $msg));
+   exit(0);
+}

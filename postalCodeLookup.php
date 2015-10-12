@@ -30,4 +30,6 @@ if ($country === 'FR') {
     }
     $towns = array_slice($towns, 0, $maxRows);
     echoJson(array("towns" => $towns));
+} else {
+    fatal("unknown country");
 }
