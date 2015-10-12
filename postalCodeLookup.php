@@ -6,6 +6,9 @@ $postalcode= GET_or_NULL('postalcode');
 $country = GET_or_NULL('country');
 $token = GET_or_NULL('token');
 $maxRows = min(max(GET_or_NULL("maxRows"), 10), 99);
+if ($postalcode === NULL && $token === NULL) {
+    fatal("you must be pass 'country', 'postalcode' and/or 'token'. 'maxRows' is optional");
+}
 
 if ($country === 'FR') {
     require_once 'frenchPostalCodes.inc.php';
