@@ -18,6 +18,7 @@ if (preg_match('/([^"]*\.csv)/', curl($base_url), $m)) {
         $allTowns[] = $town;
     }
 
+    ksort($r);
     $allTowns = array_unique($allTowns);
     sort($allTowns);
     gen(array('frenchPostalCodes' => $r, 'allTowns' => $allTowns));
